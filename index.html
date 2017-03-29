@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>README.md</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="doc-style.css" />
+  <script src="doc-filelist.js"></script>
+  <script>
+    var relativeDir = "";
+    var thisFile = "README.md";
+    var defaultSidebar = true;
+  </script>
+  <script src="doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+      <div class="heading h1">
+        <a href="#marked-cloudinary">marked-cloudinary</a>
+      </div>
+
+      <div class="heading h2">
+        <a href="#install">install</a>
+      </div>
+
+      <div class="heading h2">
+        <a href="#usage">usage</a>
+      </div>
+
+      <div class="heading h2">
+        <a href="#quotes">quotes</a>
+      </div>
+
+      <div class="heading h2">
+        <a href="#compatibility">compatibility</a>
+      </div>
+
+      <div class="heading h2">
+        <a href="#author">Author</a>
+      </div>
+
+      <div class="heading h2">
+        <a href="#contributing">Contributing</a>
+      </div>
+
+      <div class="heading h2">
+        <a href="#license">License</a>
+      </div>
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="docs markdown"><div class="pilwrap" id="marked-cloudinary">
+  <h1>
+    <a href="#marked-cloudinary" name="marked-cloudinary" class="pilcrow"></a>
+marked-cloudinary
+  </h1>
+</div>
+<p><img src="https://nodei.co/npm/marked-cloudinary.png?downloads=true&amp;downloadRank=true&amp;stars=true" alt="nodei.co"></p>
+<p><img src="https://img.shields.io/npm/v/marked-cloudinary.svg" alt="npm"></p>
+<p><img src="https://img.shields.io/github/issues/leviwheatcroft/marked-cloudinary.svg" alt="github-issues"></p>
+<p><img src="https://img.shields.io/github/stars/leviwheatcroft/marked-cloudinary.svg" alt="stars"></p>
+<p><img src="https://img.shields.io/github/forks/leviwheatcroft/marked-cloudinary.svg" alt="forks"></p>
+<p><a href="https://www.npmjs.com/package/marked">marked</a> / <a href="http://cloudinary.com/">cloudinary</a>
+renderer to generate cloudinary urls.</p>
+<div class="pilwrap" id="install">
+  <h2>
+    <a href="#install" name="install" class="pilcrow"></a>
+install
+  </h2>
+</div>
+<p><code>npm i --save marked-cloudinary</code></p>
+<div class="pilwrap" id="usage">
+  <h2>
+    <a href="#usage" name="usage" class="pilcrow"></a>
+usage
+  </h2>
+</div>
+<pre><code class="javascript"><span class="hljs-keyword">import</span> { markedCloudinary } <span class="hljs-keyword">from</span> <span class="hljs-string">'marked-cloudinary'</span>
+<span class="hljs-keyword">import</span> { marked } <span class="hljs-keyword">from</span> <span class="hljs-string">'marked'</span>
+
+<span class="hljs-keyword">const</span> renderer = <span class="hljs-keyword">new</span> marked.Renderer()
+renderer.image = imgRenderer
+marked(
+  <span class="hljs-string">'![image alt](cloudinary_id "image title { width: 400, height: 300, crop: \'fill\'}")'</span>,
+  { renderer }
+)
+<span class="hljs-comment">// &lt;img src="http://res.cloudinary.com/whtcr/image/upload/c_fill,h_300,w_400/v1/cloudinary_id" alt="image alt"&gt; "image title"</span>
+</code></pre>
+<div class="pilwrap" id="quotes">
+  <h2>
+    <a href="#quotes" name="quotes" class="pilcrow"></a>
+quotes
+  </h2>
+</div>
+<p>The example above shows a problem you run into if trying to declare strings in
+js. The escaped quotes will work fine in this case.</p>
+<p>In a markdown file, you can just use single quotes for string parameters.</p>
+<div class="pilwrap" id="compatibility">
+  <h2>
+    <a href="#compatibility" name="compatibility" class="pilcrow"></a>
+compatibility
+  </h2>
+</div>
+<p><code>dist/index.js</code> should be fully compatible with node 6</p>
+<div class="pilwrap" id="author">
+  <h2>
+    <a href="#author" name="author" class="pilcrow"></a>
+Author
+  </h2>
+</div>
+<p>Levi Wheatcroft <a href="mailto:levi@wht.cr.html">levi@wht.cr</a></p>
+<div class="pilwrap" id="contributing">
+  <h2>
+    <a href="#contributing" name="contributing" class="pilcrow"></a>
+Contributing
+  </h2>
+</div>
+<p>Contributions welcome; Please submit all pull requests against the master
+branch.</p>
+<div class="pilwrap" id="license">
+  <h2>
+    <a href="#license" name="license" class="pilcrow"></a>
+License
+  </h2>
+</div>
+<p><a href="http://opensource.org/licenses/MIT">MIT</a></p>
+</div>
+  </div>
+</body>
+</html>

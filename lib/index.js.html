@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>index.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../doc-style.css" />
+  <script src="../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../";
+    var thisFile = "lib/index.js";
+    var defaultSidebar = true;
+  </script>
+  <script src="../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+      <div class="heading h2">
+        <a href="#anonymous-default-export">Anonymous default export</a>
+      </div>
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>index.js</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> { v2 <span class="hljs-keyword">as</span> cloudinary } <span class="hljs-keyword">from</span> <span class="hljs-string">'cloudinary'</span>
+<span class="hljs-keyword">import</span> { parse } <span class="hljs-keyword">from</span> <span class="hljs-string">'hjson'</span>
+<span class="hljs-keyword">import</span> { <span class="hljs-built_in">unescape</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">'lodash.unescape'</span>
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="anonymous-default-export">
+  <h2>
+    <a href="#anonymous-default-export" name="anonymous-default-export" class="pilcrow"></a>
+Anonymous default export
+  </h2>
+</div>
+<p>A wrapper around the renderer to allow instantiation.
+The only option which needs to be passed is <code>cloud_name</code>. Other options may
+be passed to cloudinary config like <code>secure: true</code></p>
+</div>
+<div class="body">
+</div>
+<div class="details">
+<div class="dox_tag_title">Params</div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name">opts</span>
+<span class="dox_type">Object</span>
+<span class="dox_type">String</span>
+<span>cloud_name as string or options hash
+</span>
+</div>
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">opts</span>) </span>{
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> opts === <span class="hljs-string">'string'</span>) opts = { <span class="hljs-attr">cloud_name</span>: opts }
+  cloudinary.config(opts)
+  <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">href, title, alt</span>) =&gt;</span> {
+    <span class="hljs-keyword">let</span> params = <span class="hljs-regexp">/\{.*\}/</span>.exec(title)
+    <span class="hljs-keyword">if</span> (params) {
+      title = title.replace(<span class="hljs-regexp">/\{.*\}/</span>, <span class="hljs-string">''</span>)
+      params = params[<span class="hljs-number">0</span>]
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3"></a>
+</div>
+<p>see https://github.com/hjson/hjson-js/issues/13</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">      params = <span class="hljs-built_in">unescape</span>(params).replace(<span class="hljs-regexp">/'/g</span>, <span class="hljs-string">'"'</span>)
+      href = cloudinary.url(href, parse(params))
+    }
+    title = title ? <span class="hljs-string">` &amp;quot;<span class="hljs-subst">${title}</span>&amp;quot;`</span> : <span class="hljs-string">''</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">`&lt;img src="<span class="hljs-subst">${href}</span>" alt="<span class="hljs-subst">${alt}</span>"&gt;<span class="hljs-subst">${title}</span>`</span>
+  }
+}
+
+</pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>
