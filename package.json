@@ -1,6 +1,6 @@
 {
   "name": "marked-cloudinary",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "marked renderer to generate cloudinary urls",
   "main": "dist/index.js",
   "scripts": {
