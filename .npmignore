@@ -1,0 +1,12 @@
+node_modules
+test/fixtures/*/build
+.nyc_output
+coverage
+docs
+config/local.js
+npm-debug.log
+.store
+.editorconfig
+
+lib
+test
