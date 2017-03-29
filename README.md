@@ -1,14 +1,14 @@
-# ${pkg.name}
+# marked-cloudinary
 
-${badge('nodei')}
+![nodei.co](https://nodei.co/npm/marked-cloudinary.png?downloads=true&downloadRank=true&stars=true)
 
-${badge('npm')}
+![npm](https://img.shields.io/npm/v/marked-cloudinary.svg)
 
-${badge('github-issues')}
+![github-issues](https://img.shields.io/github/issues/leviwheatcroft/marked-cloudinary.svg)
 
-${badge('github-stars')}
+![stars](https://img.shields.io/github/stars/leviwheatcroft/marked-cloudinary.svg)
 
-${badge('github-forks')}
+![forks](https://img.shields.io/github/forks/leviwheatcroft/marked-cloudinary.svg)
 
 [marked](https://www.npmjs.com/package/marked) / [cloudinary](http://cloudinary.com/)
 renderer to generate cloudinary urls.
