@@ -52,7 +52,7 @@
         <td class="code highlight">
           <pre class="javascript"><span class="hljs-keyword">import</span> { v2 <span class="hljs-keyword">as</span> cloudinary } <span class="hljs-keyword">from</span> <span class="hljs-string">'cloudinary'</span>
 <span class="hljs-keyword">import</span> { parse } <span class="hljs-keyword">from</span> <span class="hljs-string">'hjson'</span>
-<span class="hljs-keyword">import</span> { <span class="hljs-built_in">unescape</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">'lodash.unescape'</span>
+<span class="hljs-keyword">import</span> <span class="hljs-built_in">unescape</span> <span class="hljs-keyword">from</span> <span class="hljs-string">'lodash.unescape'</span>
 
 </pre>
         </td>
@@ -109,7 +109,8 @@ be passed to cloudinary config like <code>secure: true</code></p>
 
         </td>
         <td class="code highlight">
-          <pre class="javascript">      params = <span class="hljs-built_in">unescape</span>(params).replace(<span class="hljs-regexp">/'/g</span>, <span class="hljs-string">'"'</span>)
+          <pre class="javascript">      <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">unescape</span>(params).replace(<span class="hljs-regexp">/'/g</span>, <span class="hljs-string">'"'</span>))
+      params = <span class="hljs-built_in">unescape</span>(params).replace(<span class="hljs-regexp">/'/g</span>, <span class="hljs-string">'"'</span>)
       href = cloudinary.url(href, parse(params))
     }
     title = title ? <span class="hljs-string">` &amp;quot;<span class="hljs-subst">${title}</span>&amp;quot;`</span> : <span class="hljs-string">''</span>
