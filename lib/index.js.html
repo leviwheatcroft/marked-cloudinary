@@ -109,8 +109,7 @@ be passed to cloudinary config like <code>secure: true</code></p>
 
         </td>
         <td class="code highlight">
-          <pre class="javascript">      <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">unescape</span>(params).replace(<span class="hljs-regexp">/'/g</span>, <span class="hljs-string">'"'</span>))
-      params = <span class="hljs-built_in">unescape</span>(params).replace(<span class="hljs-regexp">/'/g</span>, <span class="hljs-string">'"'</span>)
+          <pre class="javascript">      params = <span class="hljs-built_in">unescape</span>(params).replace(<span class="hljs-regexp">/'/g</span>, <span class="hljs-string">'"'</span>)
       href = cloudinary.url(href, parse(params))
     }
     title = title ? <span class="hljs-string">` &amp;quot;<span class="hljs-subst">${title}</span>&amp;quot;`</span> : <span class="hljs-string">''</span>
