@@ -20,16 +20,17 @@ renderer to generate cloudinary urls.
 ## usage
 
 ```javascript
-import { markedCloudinary } from 'marked-cloudinary'
-import { marked } from 'marked'
+import markedCloudinary from 'markedCloudinary'
+import marked from 'marked'
 
 const renderer = new marked.Renderer()
-renderer.image = imgRenderer
+renderer.image = markedCloudinary('my-cloud-name')
+
 marked(
   '![image alt](cloudinary_id "image title { width: 400, height: 300, crop: \'fill\'}")',
   { renderer }
 )
-// <img src="http://res.cloudinary.com/whtcr/image/upload/c_fill,h_300,w_400/v1/cloudinary_id" alt="image alt"> "image title"
+// <img src="http://res.cloudinary.com/my-cloud-name/image/upload/c_fill,h_300,w_400/v1/cloudinary_id" alt="image alt"> "image title"
 ```
 
 ## quotes

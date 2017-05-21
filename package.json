@@ -10,11 +10,7 @@
     "build": "npm run babel && npm run readme && npm run docs && cp docs/README.md.html docs/index.html && npm run gh-pages",
     "babel": "cross-env NODE_ENV=node6 babel lib -d dist",
     "babel:watch": "cross-env NODE_ENV=node6 babel lib -d dist -w",
-    "test:coverage": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text --check-coverage --lines 100 npm run test",
-    "test": "cross-env NODE_ENV=test mocha --compilers js:babel-register test",
-    "test:watch": "cross-env NODE_ENV=test mocha --compilers js:babel-register --watch test",
-    "version": "npm run build",
-    "postversion": "git push && git push --tags"
+    "test": "cross-env NODE_ENV=test mocha -r should --reporter spec --compilers js:babel-register test"
   },
   "repository": {
     "type": "git",
@@ -33,7 +29,7 @@
   "homepage": "https://github.com/leviwheatcroft/marked-cloudinary#readme",
   "dependencies": {
     "cloudinary": "^1.8.0",
-    "hjson": "^2.4.1",
+    "hjson": "^2.4.2",
     "lodash.unescape": "^4.0.1"
   },
   "devDependencies": {
@@ -54,10 +50,12 @@
     "eslint-plugin-promise": "^3.0.0",
     "eslint-plugin-standard": "^2.0.1",
     "gh-pages": "^0.12.0",
+    "marked": "^0.3.6",
     "mocha": "^3.1.2",
     "node-readme": "^0.1.9",
     "node-resemble-js": "^0.1.1",
-    "nyc": "^8.3.1"
+    "nyc": "^8.3.1",
+    "should": "^11.2.1"
   },
   "eslintConfig": {
     "parser": "babel-eslint",
