@@ -84,16 +84,17 @@ install
 usage
   </h2>
 </div>
-<pre><code class="javascript"><span class="hljs-keyword">import</span> { markedCloudinary } <span class="hljs-keyword">from</span> <span class="hljs-string">'marked-cloudinary'</span>
-<span class="hljs-keyword">import</span> { marked } <span class="hljs-keyword">from</span> <span class="hljs-string">'marked'</span>
+<pre><code class="javascript"><span class="hljs-keyword">import</span> markedCloudinary <span class="hljs-keyword">from</span> <span class="hljs-string">'markedCloudinary'</span>
+<span class="hljs-keyword">import</span> marked <span class="hljs-keyword">from</span> <span class="hljs-string">'marked'</span>
 
 <span class="hljs-keyword">const</span> renderer = <span class="hljs-keyword">new</span> marked.Renderer()
-renderer.image = imgRenderer
+renderer.image = markedCloudinary(<span class="hljs-string">'my-cloud-name'</span>)
+
 marked(
   <span class="hljs-string">'![image alt](cloudinary_id "image title { width: 400, height: 300, crop: \'fill\'}")'</span>,
   { renderer }
 )
-<span class="hljs-comment">// &lt;img src="http://res.cloudinary.com/whtcr/image/upload/c_fill,h_300,w_400/v1/cloudinary_id" alt="image alt"&gt; "image title"</span>
+<span class="hljs-comment">// &lt;img src="http://res.cloudinary.com/my-cloud-name/image/upload/c_fill,h_300,w_400/v1/cloudinary_id" alt="image alt"&gt; "image title"</span>
 </code></pre>
 <div class="pilwrap" id="quotes">
   <h2>

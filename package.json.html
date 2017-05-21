@@ -58,9 +58,7 @@
     <span class="hljs-attr">"build"</span>: <span class="hljs-string">"npm run babel &amp;&amp; npm run readme &amp;&amp; npm run docs &amp;&amp; cp docs/README.md.html docs/index.html &amp;&amp; npm run gh-pages"</span>,
     <span class="hljs-attr">"babel"</span>: <span class="hljs-string">"cross-env NODE_ENV=node6 babel lib -d dist"</span>,
     <span class="hljs-attr">"babel:watch"</span>: <span class="hljs-string">"cross-env NODE_ENV=node6 babel lib -d dist -w"</span>,
-    <span class="hljs-attr">"test:coverage"</span>: <span class="hljs-string">"cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text --check-coverage --lines 100 npm run test"</span>,
-    <span class="hljs-attr">"test"</span>: <span class="hljs-string">"cross-env NODE_ENV=test mocha --compilers js:babel-register test"</span>,
-    <span class="hljs-attr">"test:watch"</span>: <span class="hljs-string">"cross-env NODE_ENV=test mocha --compilers js:babel-register --watch test"</span>,
+    <span class="hljs-attr">"test"</span>: <span class="hljs-string">"cross-env NODE_ENV=test mocha -r should --reporter spec --compilers js:babel-register test"</span>,
     <span class="hljs-attr">"version"</span>: <span class="hljs-string">"npm run build"</span>,
     <span class="hljs-attr">"postversion"</span>: <span class="hljs-string">"git push &amp;&amp; git push --tags"</span>
   },
@@ -81,7 +79,7 @@
   <span class="hljs-attr">"homepage"</span>: <span class="hljs-string">"https://github.com/leviwheatcroft/marked-cloudinary#readme"</span>,
   <span class="hljs-attr">"dependencies"</span>: {
     <span class="hljs-attr">"cloudinary"</span>: <span class="hljs-string">"^1.8.0"</span>,
-    <span class="hljs-attr">"hjson"</span>: <span class="hljs-string">"^2.4.1"</span>,
+    <span class="hljs-attr">"hjson"</span>: <span class="hljs-string">"^2.4.2"</span>,
     <span class="hljs-attr">"lodash.unescape"</span>: <span class="hljs-string">"^4.0.1"</span>
   },
   <span class="hljs-attr">"devDependencies"</span>: {
@@ -102,10 +100,12 @@
     <span class="hljs-attr">"eslint-plugin-promise"</span>: <span class="hljs-string">"^3.0.0"</span>,
     <span class="hljs-attr">"eslint-plugin-standard"</span>: <span class="hljs-string">"^2.0.1"</span>,
     <span class="hljs-attr">"gh-pages"</span>: <span class="hljs-string">"^0.12.0"</span>,
+    <span class="hljs-attr">"marked"</span>: <span class="hljs-string">"^0.3.6"</span>,
     <span class="hljs-attr">"mocha"</span>: <span class="hljs-string">"^3.1.2"</span>,
     <span class="hljs-attr">"node-readme"</span>: <span class="hljs-string">"^0.1.9"</span>,
     <span class="hljs-attr">"node-resemble-js"</span>: <span class="hljs-string">"^0.1.1"</span>,
-    <span class="hljs-attr">"nyc"</span>: <span class="hljs-string">"^8.3.1"</span>
+    <span class="hljs-attr">"nyc"</span>: <span class="hljs-string">"^8.3.1"</span>,
+    <span class="hljs-attr">"should"</span>: <span class="hljs-string">"^11.2.1"</span>
   },
   <span class="hljs-attr">"eslintConfig"</span>: {
     <span class="hljs-attr">"parser"</span>: <span class="hljs-string">"babel-eslint"</span>,
